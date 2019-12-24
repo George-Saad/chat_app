@@ -1,0 +1,85 @@
+spring.profiles.active: dev
+
+---
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/chat_app
+    username: root
+    password: 123456
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  flyway:
+    enabled: true
+  thymeleaf:
+    cache: false
+  session:
+    store-type: redis
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chat_app
+    redis:
+      repositories:
+        enabled: true
+  redis:
+    host: localhost
+    port: 6379
+  messages:
+    cache-duration: 0
+#security.headers.cache: false
+
+server:
+  servlet:
+    session:
+      timeout: 600
+
+app:
+  chat:
+    relay:
+      host: 127.0.0.1
+      port: 61613
+
+#---
+#
+#spring:
+#  profiles: test
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/chat_app
+#    username: root
+#    password: 123456
+#    testWhileIdle: true
+#    validationQuery: SELECT 1
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: validate
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#  flyway:
+#    enabled: true
+#  session:
+#    store-type: none
+#  redis:
+#    host: localhost
+#    port: 6379
+#  data:
+#    redis:
+#      repositories:
+#        enabled: true
+#
+#app:
+#  chat:
+#    relay:
+#      host: localhost
+#      port: 61613
