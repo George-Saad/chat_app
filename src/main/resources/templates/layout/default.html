@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      >
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -32,7 +33,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{menu.language}">Language</a>
           <ul class="dropdown-menu">
           	<li><a id="english" href="?lang=en" th:text="#{menu.language.english}">English</a></li>
-            <li><a id="portuguese" href="?lang=pt" th:text="#{menu.language.arabic}">العربية</a></li>
+            <li><a id="portuguese" href="?lang=ar" th:text="#{menu.language.arabic}">العربية</a></li>
           </ul>
         </li>
         <li class="dropdown" sec:authorize="isAuthenticated()">

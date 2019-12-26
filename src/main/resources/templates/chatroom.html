@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity"
+	  >
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -29,7 +31,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{menu.language}">Language</a>
           <ul class="dropdown-menu">
           	<li><a id="english" href="?lang=en" th:text="#{menu.language.english}">English</a></li>
-            <li><a id="portuguese" href="?lang=pt" th:text="#{menu.language.arabic}">العربية</a></li>
+            <li><a id="portuguese" href="?lang=ar" th:text="#{menu.language.arabic}">العربية</a></li>
           </ul>
         </li>
         
@@ -77,7 +79,7 @@
 		</div>
 		<div class="col-lg-12 col-sm-6">
 			<div class="input-group input-group-lg">
-				<span class="input-group-addon" id="sendTo">public</span> 
+				<span class="input-group-addon" id="sendTo" th:text="#{chatroom.message.public}">public</span>
 				<input id="message" type="text" class="form-control" aria-describedby="sendTo" th:placeholder="#{chatroom.message.placeholder}" /> 
 				<span class="input-group-btn">
 					<button id="send" class="btn btn-default" type="button" th:text="#{chatroom.send}">Send</button>
