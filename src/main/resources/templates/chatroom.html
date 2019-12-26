@@ -2,7 +2,7 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity"
-	  >
+	  th:dir="#{menu.dir}">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -16,17 +16,17 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header" th:style="#{navbar.float}">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ebook Chat App</a>
+      <a class="navbar-brand" href="#">Chat App</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right" sec:authorize="isAuthenticated()">
+      <ul class="nav navbar-nav" th:classappend="#{navbar.dir}" sec:authorize="isAuthenticated()">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{menu.language}">Language</a>
           <ul class="dropdown-menu">

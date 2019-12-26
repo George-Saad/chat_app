@@ -2,7 +2,7 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-      >
+      th:dir="#{menu.dir}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -15,7 +15,7 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header" th:style="#{navbar.float}">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -25,10 +25,10 @@
       <a class="navbar-brand" href="#">Chat App</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+      <ul class="nav navbar-nav" sec:authorize="isAuthenticated()" th:style="#{navbar.float}">
         <li class="active"><a href="/chat" th:text="#{menu.chatrooms}">Chat Rooms</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav" th:classappend=" #{navbar.dir}">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{menu.language}">Language</a>
           <ul class="dropdown-menu">
